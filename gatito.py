@@ -1,121 +1,153 @@
 import os
 import csv
 
-class AdmGato:
-  def __init__(self):
-    self.archivo = "gatito.csv"
 
-  def guardarTablero(self, tablero, jugador_actual):
-    with open(self.archivo, 'w') as archivo:
-      escritor_csv = csv.writer(archivo)
-      escritor_csv.writerow(jugador_actual)
-      for i in tablero:
-        escritor_csv.writerow(i)
+class AdmTicTacToe:
+ def __init__(self):
+   self.file = "gatito.csv"
 
-  def actualizarTablero(self, tablero):
-    jugador_actual = " "
-    with open(self.archivo, "r") as archivo:
-      jugador_actual = archivo.readline()[0]
-      lector_csv = csv.reader(archivo)
-      for numFila, fila in enumerate(lector_csv):
-        tablero[numFila] = fila
-    return jugador_actual
+
+ def saveBoard(self, board, currentPlayer):
+   with open(self.file, 'w') as file:
+     writer_csv = csv.writer(file)
+     writer_csv.writerow(currentPlayer)
+     for i in board:
+       writer_csv.writerow(i)
+
+
+ def updateBoard(self, board):
+   currentPlayer = " "
+   with open(self.file, "r") as file:
+     currentPlayer = file.readline()[0]
+     read_csv = csv.reader(file)
+     for numFila, row in enumerate(read_csv):
+       board[numFila] = row
+   return currentPlayer
+
 
 class Gato:
-    def __init__(self):
-        self.tablero = [[' ' for _ in range(3)] for _ in range(3)]
-        self.jugador_actual = 'X'
-        self.admGato = AdmGato()
+   def __init__(self):
+       self.board = [[' ' for _ in range(3)] for _ in range(3)]
+       self.currentPlayer = "X"
+       self.admTicTacToe = AdmTicTacToe()
 
-    def print_tablero(self):
-        for fila in self.tablero:
-            print('|'.join(fila))
-            print('-' * 5)
 
-    def movimiento(self, fila, col):
-      if self.tablero[fila][col] == ' ':
-        self.tablero[fila][col] = self.jugador_actual
-        self.jugador_actual = 'O' if self.jugador_actual == 'X' else 'X'
-        self.admGato.guardarTablero(self.tablero, self.jugador_actual)
-        self.jugador_actual = self.admGato.actualizarTablero(self.tablero)
-      else:
-        print("Movimiento no válido! Intente de nuevo.")
+   def print_board(self):
+       for row in self.board:
+           print('|'.join(row))
+           print('-' * 5)
 
-    def rev_ganador(self):
-        # Revisar filas
-        for fila in self.tablero:
-            if fila[0] == fila[1] == fila[2] != ' ':
-                return fila[0]
 
-        # Revisar columnas
-        for col in range(3):
-            if self.tablero[0][col] == self.tablero[1][col] == self.tablero[2][col] != ' ':
-                return self.tablero[0][col]
+   def move(self, row, col):
+     valido = False
+     playerMove = self.currentPlayer
 
-        # Revisar diagonales
-        if self.tablero[0][0] == self.tablero[1][1] == self.tablero[2][2] != ' ':
-            return self.tablero[0][0]
-        if self.tablero[0][2] == self.tablero[1][1] == self.tablero[2][0] != ' ':
-            return self.tablero[0][2]
 
-        # Revisar por empate
-        if all(self.tablero[fila][col] != ' ' for fila in range(3) for col in range(3)):
-            return 'Empate'
+     if self.board[row][col] == ' ':
+       valido = True
+       self.board[row][col] = self.currentPlayer
+       self.currentPlayer = 'O' if self.currentPlayer == 'X' else 'X'
+       self.admTicTacToe.saveBoard(self.board, self.currentPlayer)
+       self.currentPlayer = self.admTicTacToe.updateBoard(self.board)
+      
+     else:
+       print("Movimiento no válido! Intente de nuevo.")
 
-        # Sin ganador por el momento
-        return None
 
-    def obtenerEntero(self, mensaje):
-      entero = 0
-      valorValido = False
+     return (valido, playerMove)
+  
 
-      while not valorValido:
-        try:
-          entero = int(input(mensaje))
-          valorValido = True
-        except:
-          continue
-      return entero
 
-    def menu (self):
-      while True:
-        print("\n=== MENÚ ===")
-        print("1. Jugar")
-        print("2. Reiniciar partida")
-        print("3. Salir")
+   #  Retorna x, o, Empate o None
+   def checkWinner(self):
+       # Revisar rows
+       for row in self.board:
+           if row[0] == row[1] == row[2] != ' ':
+               return row[0]
 
-        opcion = self.obtenerEntero("Seleccione una opción: ")
 
-        if opcion == 1:
-          self.jugador_actual = self.admGato.actualizarTablero(self.tablero)
-          self.jugar()
-          break
-        elif opcion == 2:
-          #Al no cargar el archivo este se sobreescribe
-          self.jugar()
-          break
-        elif opcion == 3:
-          break
-        else:
-          print("Opción inválida. Intente de nuevo.\n")
+       # Revisar columnas
+       for col in range(3):
+           if self.board[0][col] == self.board[1][col] == self.board[2][col] != ' ':
+               return self.board[0][col]
 
-    def jugar(self):
-      while True:
-        os.system('cls')
-        juego.print_tablero()
 
-        if juego.rev_ganador():
-          result = juego.rev_ganador()
-          if result == 'Empate':
-            print("Es un empate!")
-          else:
-            print(f"El jugador {result} ganó!")
-            break
+       # Revisar diagonales
+       if self.board[0][0] == self.board[1][1] == self.board[2][2] != ' ':
+           return self.board[0][0]
+       if self.board[0][2] == self.board[1][1] == self.board[2][0] != ' ':
+           return self.board[0][2]
 
-        fila = int(input("Digite una fila (0-2): "))
-        col = int(input("Digite una columna (0-2): "))
-        juego.movimiento(fila, col)
 
-# Main game loop
-juego = Gato()
-juego.menu()
+       # Revisar por empate
+       if all(self.board[row][col] != ' ' for row in range(3) for col in range(3)):
+           return 'Empate'
+
+
+       # Sin ganador por el momento
+       return None
+
+
+   def obtenerEntero(self, mensaje):
+     entero = 0
+     valorValido = False
+
+
+     while not valorValido:
+       try:
+         entero = int(input(mensaje))
+         valorValido = True
+       except:
+         continue
+     return entero
+  
+   def restartGame(self):
+      self.board = [[' ' for _ in range(3)] for _ in range(3)]
+     
+
+
+
+
+   def menu (self):
+     while True:
+       print("\n=== MENÚ ===")
+       print("1. Jugar")
+       print("2. Reiniciar partida")
+       print("3. Salir")
+
+
+       opcion = self.obtenerEntero("Seleccione una opción: ")
+
+
+       if opcion == 1:
+         self.currentPlayer = self.admTicTacToe.updateBoard(self.board)
+         self.play()
+         break
+       elif opcion == 2:
+         #Al no cargar el archivo este se sobreescribe
+         self.play()
+         break
+       elif opcion == 3:
+         break
+       else:
+         print("Opción inválida. Intente de nuevo.\n")
+
+
+   def play(self):
+     while True:
+       os.system('cls')
+       game.print_board()
+
+
+       if game.checkWinner():
+         result = game.checkWinner()
+         if result == 'Empate':
+           print("Es un empate!")
+         else:
+           print(f"El jugador {result} ganó!")
+           break
+
+
+       row = int(input("Digite una fila (0-2): "))
+       col = int(input("Digite una columna (0-2): "))
+       game.move(row, col)
