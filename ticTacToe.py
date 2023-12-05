@@ -44,12 +44,10 @@ class TicTacToeBoard(tk.Tk):
         global game
         isValid = game.move(x, y)
      
-        print("Ha seleccionado el espacio", x, y)
 
         if (isValid[0]):
             self.paintBoard(x, y, isValid[1])
             res = game.checkWinner()
-            print(res)
             self.popUpWinner(res)
             
 
