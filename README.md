@@ -4,6 +4,10 @@
 
 El presente programa es un juego de gato con interfaz gráfica de tkinter, asimismo se apoya en un juego de gato realizado enteramente con matrices, lo cual permite el entendimiento principal del juego. Ahora bien, el programa que contiene la interfaz gráfica se apoya del juego con matrices para aplicar la lógica que este conlleva. 
 
+
+### Metodologia del juego
+El juego consiste en un tablero de gato, un jugador debe escoger ser 'X' y el otro 'O'. El primer jugador debe escoger debe escoger una casilla para colocar su movimiento, de esta forma el otro jugador realiza lo mismo, y estos se turnan hasta terminar la partida. La partida termina cuando uno de los jugadores logra formar tres de sus s[imbolos en l[inea. Si el juego, no determina un ganador, el juego queda en empate. 
+
 ## Dependencias e instalación
 
 ### Instalación de Tkinter
