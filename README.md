@@ -55,3 +55,11 @@ python3 ticTacToe.py
 ## Ejemplos de funcionamiento
 
 A continuación se presenta cómo es que se ve el programa al ejecutarlo:
+![pp1](https://github.com/prichavarria/proyectoGato/assets/144200787/dd5f0669-d64f-430e-94f2-531e867128c8)
+![pp2](https://github.com/prichavarria/proyectoGato/assets/144200787/bec81b9e-3e81-4394-a697-f7454f6bcc25)
+![pp4](https://github.com/prichavarria/proyectoGato/assets/144200787/4427ed72-c1d9-41db-b177-55db05426a18)
+![pp3](https://github.com/prichavarria/proyectoGato/assets/144200787/0a959dca-5f4b-44c0-a8da-37e85498c361)
+
+
+
+
