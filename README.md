@@ -6,7 +6,7 @@ El presente programa es un juego de gato con interfaz gráfica de tkinter, asimi
 
 
 ### Metodologia del juego
-El juego consiste en un tablero de gato, un jugador debe escoger ser 'X' y el otro 'O'. El primer jugador debe escoger debe escoger una casilla para colocar su movimiento, de esta forma el otro jugador realiza lo mismo, y estos se turnan hasta terminar la partida. La partida termina cuando uno de los jugadores logra formar tres de sus s[imbolos en l[inea. Si el juego, no determina un ganador, el juego queda en empate. 
+El juego consiste en un tablero de gato, un jugador debe escoger ser 'X' y el otro 'O'. El primer jugador debe escoger debe escoger una casilla para colocar su movimiento, de esta forma el otro jugador realiza lo mismo, y estos se turnan hasta terminar la partida. La partida termina cuando uno de los jugadores logra formar tres de sus símbolos en línea. Si el juego, no determina un ganador, el juego queda en empate. 
 
 ## Dependencias e instalación
 
