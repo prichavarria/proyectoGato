@@ -63,4 +63,7 @@ A continuación se presenta cómo es que se ve el programa al ejecutarlo:
 
 ![pp4](https://github.com/prichavarria/proyectoGato/assets/144200787/4427ed72-c1d9-41db-b177-55db05426a18)
 
+![pp5](https://github.com/prichavarria/proyectoGato/assets/144200787/e46d1cf5-6d38-4907-8b13-09ce2f9d7ce4)
+
+
 
