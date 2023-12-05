@@ -2,7 +2,7 @@
 
 ## Descripción
 
-El presente programa es un juego de gato con interfaz gráfica de tkinter, asimismo se apoya en un juego de gato realizado enteramente con matrices, lo cual permite el entendimiento principal del juego. Ahora bien, el programa que contiene la interfaz gráfica se apoya del juego con matrices para aplicar la lógica que este conlleva. 
+El presente programa es un juego de gato con interfaz gráfica de tkinter, asimismo se apoya en un juego de gato realizado enteramente con matrices, lo cual permite el entendimiento principal del juego. Ahora bien, el programa que contiene la interfaz gráfica se apoya del juego con matrices para aplicar la lógica que este conlleva. Para poder producir la interfaz gráfica se emplea tkinter, este nos provee un tablero, en cual se ejecuta el juego. Además, con el uso de este módulo se realiza un mensaje Pop Up donde se indica que la persona puede reiniciar el juego o no. 
 
 
 ### Metodologia del juego
