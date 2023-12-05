@@ -1,12 +1,12 @@
 # Proyecto Python
 
-## Descripcion
+## Descripción
 
-El presente programa es un juego de gato con interfaz gr[afica de tkinter, asimismo se apoya en un juego de gato realizado enteramente con matrices, lo cual permite el entendimiento principal del juego. Ahora bien, el programa que contiene la interfaz fr[afica se apoya del juego con matrices para aplicar la l[ogica que este conlleva. 
+El presente programa es un juego de gato con interfaz gráfica de tkinter, asimismo se apoya en un juego de gato realizado enteramente con matrices, lo cual permite el entendimiento principal del juego. Ahora bien, el programa que contiene la interfaz gráfica se apoya del juego con matrices para aplicar la lógica que este conlleva. 
 
-## Dependencias e instalacion
+## Dependencias e instalación
 
-### Instalaci[on de Tkinter
+### Instalación de Tkinter
 
 Se inicia revisando la version de Python que se tiene con el comando:
 
@@ -32,9 +32,9 @@ sudo apt-get install python3-tk
 ```
 
 
-## Pasos para la ejecuci[on
+## Pasos para la ejecución
 
-Ahora bien, para ejecutar el programa de manera correcta se debe asegurar de la instalacion de sus dependencias. Luego, se debe accesar a la carpeta donde se descarg[o el archivo. Por [ultimo, para ejecutarlo se debe colocar el comando a continuaci[on:
+Ahora bien, para ejecutar el programa de manera correcta se debe asegurar de la instalación de sus dependencias. Luego, se debe accesar a la carpeta donde se descargó el archivo. Por último, para ejecutarlo se debe colocar el comando a continuación:
 
 
 ```shell
@@ -45,4 +45,4 @@ python3 ticTacToe.py
  
 ## Ejemplos de funcionamiento
 
-A continuaci[on se presenta c[omo es que se ve el programa al ejecutarlo
+A continuación se presenta cómo es que se ve el programa al ejecutarlo:
