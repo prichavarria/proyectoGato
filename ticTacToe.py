@@ -6,9 +6,9 @@ from tkinter import font
 from tkinter import messagebox
 import gatito as gat
 
-'''
-La clase TicTacToeBoard contiene las funciones que permiten el funcionamiento del juego.
-'''
+
+#La clase TicTacToeBoard contiene las funciones que permiten el funcionamiento del juego.
+
 
 class TicTacToeBoard(tk.Tk):
     def __init__(self):
