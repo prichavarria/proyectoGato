@@ -30,7 +30,9 @@ Otra forma de instalarlo es con:
 ```shell
 sudo apt-get install python3-tk
 ```
+### Implementación de gatito.py
 
+Para que el programa ticTacToe.py funcione, se debe tener en la misma carpeta de descarga el archivo gatito.py, con que este programa esté en la carpeta junto a ticTacToe.py es suficiente para el éxito.
 
 ## Pasos para la ejecución
 
