@@ -1,10 +1,14 @@
 
+
+# Imports
 import tkinter as tk
 from tkinter import font
-from tkinter import Tk
 from tkinter import messagebox
-from tkinter import *
 import gatito as gat
+
+'''
+La clase TicTacToeBoard contiene las funciones que permiten el funcionamiento del juego.
+'''
 
 class TicTacToeBoard(tk.Tk):
     def __init__(self):
@@ -17,9 +21,14 @@ class TicTacToeBoard(tk.Tk):
         self._create_board_grid()
 
 
+# La funcion close hace el cierre de la ventana y del juego.
+
     def Close(self): 
         global board
         board.destroy() 
+
+
+# La funcion _create_board_display crea el display para el tablero.
 
 
     def _create_board_display(self):
@@ -40,10 +49,13 @@ class TicTacToeBoard(tk.Tk):
 
         self.display.pack()
 
+#La funcion _pressedButton verifica que el movimiento sea valido.
+
     def _pressedButton(self, x, y):
         global game
         isValid = game.move(x, y)
      
+
 
         if (isValid[0]):
             self.paintBoard(x, y, isValid[1])
@@ -51,12 +63,15 @@ class TicTacToeBoard(tk.Tk):
             self.popUpWinner(res)
             
 
+#La funcion paintBoard se encarga de rellenar la casilla en la que se realiza el movimiento con su respectivo simbolo.
+
     def paintBoard(self, x, y, player):
        
         paintButton = self._cells[(x, y)]
         
         paintButton.config(text=player)
          
+#La funcion popUpWinner se encarga de producir una caja de dialogo que indica el resultado del juego.       
 
     def popUpWinner(self, res):
         if res == "X" or res == "O" :
@@ -92,8 +107,7 @@ class TicTacToeBoard(tk.Tk):
         else:
             pass
 
-
-         
+#La funcion _create_board_grid crea las separaciones en el tablero, usando filas y columnas.
 
     def _create_board_grid(self):
 
@@ -125,6 +139,7 @@ class TicTacToeBoard(tk.Tk):
                     
                     command= lambda x=row, y=col : self._pressedButton(x, y),
 
+
                     )
 
                 self._cells[(row, col)] = button
@@ -143,10 +158,10 @@ class TicTacToeBoard(tk.Tk):
 
                 )
     
-
+#La funcion startGame se encarga de iniciar el juego. 
 
 def startGame():
-    """Create the game's board and run its main loop."""
+    
     global game
     global board
     game = gat.Gato()
