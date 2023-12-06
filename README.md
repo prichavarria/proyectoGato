@@ -2,9 +2,17 @@
 
 ## Descripción
 
-El presente programa es un juego de gato con interfaz gráfica de tkinter, asimismo se apoya en un juego de gato realizado enteramente con matrices, lo cual permite el entendimiento principal del juego. Ahora bien, el programa que contiene la interfaz gráfica se apoya del juego con matrices para aplicar la lógica que este conlleva. Para poder producir la interfaz gráfica se emplea tkinter, este nos provee un tablero, en cual se ejecuta el juego. Además, con el uso de este módulo se realiza un mensaje Pop Up donde se indica que la persona puede reiniciar el juego o no. 
+El presente programa es un juego de gato con interfaz gráfica de tkinter, asimismo se apoya en un juego de gato realizado enteramente con matrices, lo cual permite el entendimiento principal del juego. Ahora bien, el programa que contiene la interfaz gráfica se apoya del juego con matrices para aplicar la lógica que este conlleva. Para poder producir la interfaz gráfica se emplea tkinter, este nos provee un tablero, en cual se ejecuta el juego. Además, con el uso de este módulo se realiza un mensaje Pop Up donde se indica que la persona puede reiniciar el juego o no.
 
+### Título del juego
 
+Español: Gato
+Inglés: Tic Tac Toe
+
+### Plataforma de juego
+
+Se puede ejecutar el juego mediante cualquier plataforma que admita Python.
+ 
 ### Metodología del juego
 El juego consiste en un tablero de gato, un jugador debe escoger ser 'X' y el otro 'O'. El primer jugador debe escoger debe escoger una casilla para colocar su movimiento, de esta forma el otro jugador realiza lo mismo, y estos se turnan hasta terminar la partida. La partida termina cuando uno de los jugadores logra formar tres de sus símbolos en línea. Si el juego, no determina un ganador, el juego queda en empate. 
 
@@ -54,7 +62,10 @@ python3 ticTacToe.py
  
 ## Ejemplos de funcionamiento
 
+Con su debido funcionamiento, el programa debe mostrar una ventana en la que se abre el juego, luego, cuando se obtiene el resultado final se desplega una ventana final con el resultado y si se desea iniciar de nuevo el juego.
 A continuación se presenta cómo es que se ve el programa al ejecutarlo:
+
+
 ![pp1](https://github.com/prichavarria/proyectoGato/assets/144200787/dd5f0669-d64f-430e-94f2-531e867128c8)
 
 ![pp2](https://github.com/prichavarria/proyectoGato/assets/144200787/bec81b9e-3e81-4394-a697-f7454f6bcc25)
